@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228992045613873684}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -1.8647485e-10, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 2.3283064e-10, w: 1}
   m_LocalPosition: {x: 1.324, y: 0.013, z: -0.608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -76,8 +76,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2810810926099025589}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.000083557, y: 0.001134111, z: -0.0044941646, w: 0.9999893}
-  m_LocalPosition: {x: 30.835331, y: 4.27, z: 22.617512}
+  m_LocalRotation: {x: 0.0034719391, y: -0.7997034, z: -0.002628344, w: 0.6003796}
+  m_LocalPosition: {x: 43.28481, y: 0.99998105, z: 28.891163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -85,7 +85,7 @@ Transform:
   - {fileID: 4348173005563092357}
   - {fileID: 3704512824664985076}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -0.009, y: 0.13, z: -0.515}
+  m_LocalEulerAnglesHint: {x: -0.002, y: -106.205, z: -0.499}
 --- !u!33 &6030162445760664301
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: 578d0a5d-7a96-4bd5-a7cb-c7f001d9575b
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -191,7 +191,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: e6e28e14-b3fa-414b-99d2-0a0a72d0fae1
     m_ActionName: Player/Dash[/Keyboard/space]
   - m_PersistentCalls:
@@ -207,7 +207,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
     m_ActionId: 979cde29-c647-4b8d-9fe9-27e787c00c9f
     m_ActionName: Player/OnFire[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
@@ -256,7 +256,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &4204421978314156683
 CapsuleCollider:
   m_ObjectHideFlags: 0

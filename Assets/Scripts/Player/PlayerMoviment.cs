@@ -9,7 +9,7 @@ public class PlayerMoviment : MonoBehaviour
     [SerializeField] float _fowardSpeed = 10f;
     [SerializeField] float _rotationSpeed = 200f;
 
-    [SerializeField] float _dashInterval = 3f;
+    [SerializeField] public float _dashInterval = 3f;
 
     private bool _dashCooldown = false;
     private float _dashTimeCooldown = 0f;
@@ -26,8 +26,6 @@ public class PlayerMoviment : MonoBehaviour
     {
         if (moveDirection.x > 0 || moveDirection.x < 0 || moveDirection.y > 0 || moveDirection.y < 0)
         {
-
-            print($"dash speed:{_dashSpeed}");
             transform.Translate(moveDirection.y * _fowardSpeed * Time.deltaTime * _dashSpeed, 0, 0);
             if (moveDirection.y > 0 || moveDirection.y < 0)
             {
@@ -45,13 +43,9 @@ public class PlayerMoviment : MonoBehaviour
 
     void OnDash(InputAction.CallbackContext context)
     {
-        // print($"_context.:{_dashCooldown}");
-        // print($"_dash:{_dashCooldown}");
-        // print($"_dash:{_dashTimeCooldown}");
+
         if (context.started && !_dashCooldown)
         {
-
-            //transform.Translate(_lastDirection.x * 1000 * Time.deltaTime, 0, 0);
             _dashSpeed = 100f;
             _dashCooldown = true;
             SetDashTimeCooldown();

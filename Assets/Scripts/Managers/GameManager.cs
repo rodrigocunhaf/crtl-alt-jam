@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int _energy = 3;
+    [SerializeField] private int _energy;
 
 
     public int GetEnergies()
