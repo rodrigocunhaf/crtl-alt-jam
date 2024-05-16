@@ -80,14 +80,14 @@ public class Beam : MonoBehaviour
             Destroy(gameObject);
         }
 
-        void BouncingEffect()
+    }
+    void BouncingEffect()
+    {
+        if (bouncingTime > 0.25f && !bouncingTop)
         {
-            if (bouncingTime > 0.25f && !bouncingTop)
-            {
-                transform.Rotate(0, 200f * Time.deltaTime, 0);
-            }
-            bouncingTime += Time.deltaTime;
+            transform.Rotate(0, 200f * Time.deltaTime, 0);
         }
+        bouncingTime += Time.deltaTime;
     }
 
     public void SetBeanConfig(GunConfig gunConfig, string beanName)

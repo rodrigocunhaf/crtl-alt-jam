@@ -298,8 +298,9 @@ GameObject:
   - component: {fileID: 3363796034957006152}
   - component: {fileID: 7125843136493285319}
   - component: {fileID: 5906426743849326647}
+  - component: {fileID: -1255433218464960464}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: prefab_enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,15 +410,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 027e5afb494910a41b5bb308829386b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyGunPrefab: {fileID: 4443282598617133271}
-  _enemyGunPrefab2: {fileID: 4192574918718786748}
-  _enemyGunPrefab3: {fileID: 462192006356355117}
-  _enemyGunPrefab4: {fileID: 8689316227111577436}
-  _enemyBeamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
-    type: 3}
-  _projectileScale: 0.4
-  _fireRate: 0.4
   _infiniteRotate: 0
+--- !u!54 &-1255433218464960464
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275985251911570226}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4296081897189884826
 GameObject:
   m_ObjectHideFlags: 0
