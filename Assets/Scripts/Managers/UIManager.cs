@@ -38,8 +38,8 @@ public class UIManager : MonoBehaviour
     {
         while (true)
         {
-            _playerDisplay.SetDashBarGUI(_playerMoviment.GetDashTimeCooldown(), _playerMoviment._dashInterval);
-            yield return new WaitForSeconds(1f);
+            // _playerDisplay.SetDashBarGUI(_playerMoviment.GetDashTimeCooldown(), _playerMoviment._dashInterval);
+            // yield return new WaitForSeconds(1f);
         }
     }
 

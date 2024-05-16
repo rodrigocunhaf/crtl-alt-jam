@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class GunConfig : MonoBehaviour
 {
-    [SerializeField] private readonly float fireHate;
+    [SerializeField] private float projectileVelocity;
 
-    public float GetFireHate()
+    [SerializeField] Color projectileColor;
+    [SerializeField] float projectileScale;
+    [SerializeField] private GameObject _beamPrefab;
+
+
+
+    public float GetProjectileVelocity()
     {
-        return fireHate;
+        return projectileVelocity;
+    }
+
+    public Color GetProjectileColor()
+    {
+        return projectileColor;
+    }
+    public float GetProjectileScale()
+    {
+        return projectileScale;
+    }
+
+    public GameObject GetGunBeamPrefab()
+    {
+        return _beamPrefab;
     }
 }
