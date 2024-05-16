@@ -11,11 +11,8 @@ public class PlayerDisplay : MonoBehaviour
 
     GameObject _energies;
     Slider _slider;
-
-
     void Start()
     {
-        gameObject.SetActive(false);
         GameObject energies = GameObject.Find("Energies");
         GameObject player = GameObject.Find("Player");
         Camera mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();

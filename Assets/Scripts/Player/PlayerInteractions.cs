@@ -13,7 +13,6 @@ public class PlayerInteractions : MonoBehaviour
 
     void Start()
     {
-        print("ok");
         StartCoroutine(FireShot());
     }
 
