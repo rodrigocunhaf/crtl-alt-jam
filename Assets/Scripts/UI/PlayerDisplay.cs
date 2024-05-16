@@ -11,8 +11,6 @@ public class PlayerDisplay : MonoBehaviour
 
     GameObject _energies;
     Slider _slider;
-
-
     void Start()
     {
         GameObject energies = GameObject.Find("Energies");
@@ -43,22 +41,27 @@ public class PlayerDisplay : MonoBehaviour
     {
         for (int i = 0; i < nErgies; i++)
         {
+
             GameObject newNergie = Instantiate(_energyPrefab, new Vector3(_energies.transform.position.x + 34.2f * i, _energies.transform.position.y, _energies.transform.position.z), Quaternion.identity);
             newNergie.transform.SetParent(_energies.transform);
         }
     }
 
 
-    public void SetDashBarGUI(float dashCooldown)
+    public void SetDashBarGUI(float dashCooldown, float interval)
     {
-        if (dashCooldown < 0)
+
+
+        if (dashCooldown > 0)
         {
-            _slider.value = 1;
+            _slider.value -= 0.33f;
         }
         else
         {
-
-            _slider.value = 1 - (1 / dashCooldown);
+            _slider.value = 1;
         }
+
+
+
     }
 }
