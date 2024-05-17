@@ -19,10 +19,13 @@ public class EnemyMoviment : MonoBehaviour
     private float tempoDecorrido;
     private Vector3 direcaoAleatoria;
 
+    void Awake()
+    {
+        _ramdomTimeShot = Random.Range(1, 3);
+    }
+
     void Start()
     {
-
-        _ramdomTimeShot = Random.Range(1, 3);
         StartCoroutine(FireShot());
     }
 

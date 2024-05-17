@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class BeamColliders : MonoBehaviour
+public class ItemsColliders : MonoBehaviour
 {
     GameManager _gameManager;
     UIManager _uiManager;
@@ -14,20 +14,26 @@ public class BeamColliders : MonoBehaviour
         _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
-
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider collider)
     {
-        if (other.CompareTag("Player"))
+
+        if (collider.CompareTag("Player"))
         {
-            print("colideiiiii");
             Destroy(gameObject);
-            _gameManager.RemoveEnergy();
-            if (_gameManager.GetEnergies() > 0)
+
+            if (gameObject.name == "Battery")
             {
-                _uiManager.RemoveUIEnergies();
+                _gameManager.AddEnergy();
+                _uiManager.SetUIEnergies();
+            }
+
+            if (gameObject.name == "Key")
+            {
+                _gameManager.SetKeys();
 
             }
+
         }
     }
-
+    // Start is called before the first frame update
 }

@@ -9,9 +9,8 @@ public class EnemyDisplay : MonoBehaviour
 
     private Camera _mainCamera;
 
-    void Start()
+    void Awake()
     {
-
         GameObject enemy = GameObject.Find("Enemy");
         Camera mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         if (mainCamera != null && enemy != null)
@@ -22,6 +21,7 @@ public class EnemyDisplay : MonoBehaviour
             RectTransform rectPosition = GetComponent<RectTransform>();
             rectPosition.anchoredPosition = new Vector3(positionEnemy.x, positionEnemy.y, 0);
         }
+
     }
 
     void Update()

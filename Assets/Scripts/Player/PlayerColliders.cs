@@ -5,15 +5,25 @@ using UnityEngine;
 
 public class PlayerColliders : MonoBehaviour
 {
-    Rigidbody rb;
+    [SerializeField] private GameObject _bag;
+    GameManager _gameManager;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
 
+        if (collider.name == "Key")
+        {
+            _bag.SetActive(true);
+        }
+
+        if (collider.CompareTag("Projectile") && collider.gameObject.layer == 6)
+        {
+            _gameManager.SetVulnerability();
+        }
     }
 }
