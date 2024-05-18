@@ -36,12 +36,12 @@ public class PlayerMoviment : MonoBehaviour
         }
     }
 
-    void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         moveDirection = context.ReadValue<Vector2>();
     }
 
-    void OnDash(InputAction.CallbackContext context)
+    public void OnDash(InputAction.CallbackContext context)
     {
 
         if (context.started && !_dashCooldown)

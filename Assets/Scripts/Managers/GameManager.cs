@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
+
+
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int _energy;
@@ -12,10 +17,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float immunityTimeMax = 3f;
 
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject[] _doorsPrefabs;
+    [SerializeField] GameObject[] _keysDoorsPrefabs;
 
 
     void Start()
     {
+
         StartCoroutine(GameProgressRoutine());
     }
 

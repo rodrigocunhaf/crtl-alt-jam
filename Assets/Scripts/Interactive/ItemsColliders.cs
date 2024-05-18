@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+
 public class ItemsColliders : MonoBehaviour
 {
     GameManager _gameManager;
     UIManager _uiManager;
+
+    [SerializeField] GameObject _playerBagPrefab;
+
 
     void Awake()
     {
@@ -19,7 +23,7 @@ public class ItemsColliders : MonoBehaviour
 
         if (collider.CompareTag("Player"))
         {
-            Destroy(gameObject);
+
 
             if (gameObject.name == "Battery")
             {
@@ -30,6 +34,8 @@ public class ItemsColliders : MonoBehaviour
             if (gameObject.name == "Key")
             {
                 _gameManager.SetKeys();
+                gameObject.transform.parent = _playerBagPrefab.transform;
+                gameObject.SetActive(false);
 
             }
 
