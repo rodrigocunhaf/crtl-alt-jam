@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _energy;
     [SerializeField] private int _keys;
 
-    bool _vunerability = true;
+    [SerializeField] bool _vunerability = true;
     [SerializeField] private float immunityTimeMax = 3f;
     private float currentimmunityTime = 3;
 
@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         _defaultMaterial = rend.material;
         _transparenceMateiral = Resources.Load<Material>("transparent");
 
+
+    }
+
+    void Start()
+    {
+        StartCoroutine(VulnerabilityCountdown());
     }
 
     void Update()
@@ -61,7 +67,11 @@ public class GameManager : MonoBehaviour
     {
         _vunerability = !_vunerability;
         currentimmunityTime = 3f;
-        StartCoroutine(VulnerabilityCountdown());
+    }
+
+    public bool GetVulnerability()
+    {
+        return _vunerability;
     }
 
     public int GetKeys()
@@ -75,30 +85,42 @@ public class GameManager : MonoBehaviour
 
     IEnumerator VulnerabilityCountdown()
     {
-        while (!_vunerability)
+
+        for (; ; )
         {
-            if (!isTransparent)
+            if (!_vunerability)
             {
-                rend.material = _transparenceMateiral;
-                isTransparent = true;
+                print("invulneravel");
+                for (int i = 0; i < 6; i++)
+                {
+                    if (i % 2 == 0)
+                    {
+                        rend.material = _transparenceMateiral;
+                        isTransparent = true;
+                        yield return new WaitForSeconds(1f);
+                    }
+                    else
+                    {
+                        rend.material = _defaultMaterial;
+                        isTransparent = false;
+                        yield return new WaitForSeconds(1f);
+
+                    }
+                    if (i == 6 - 1)
+                    {
+                        _vunerability = true;
+                    }
+
+                }
+
+
 
             }
-            else
-            {
-                rend.material = _defaultMaterial;
-                isTransparent = false;
+            yield return new WaitForSeconds(0.1f);
 
-
-            }
-            yield return new WaitForSeconds(0.25f);
         }
-        Invoke("CarolDerrota", 3f);
 
     }
 
-    private void CarolDerrota()
-    {
-        StopCoroutine(VulnerabilityCountdown());
-    }
 
 }
