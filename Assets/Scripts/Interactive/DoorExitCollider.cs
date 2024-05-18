@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorExitCollider : MonoBehaviour
 {
@@ -17,7 +18,13 @@ public class DoorExitCollider : MonoBehaviour
 
                 Destroy(bag.transform.GetChild(0).gameObject);
             }
+            else
+            {
+
+                SceneManager.LoadScene("Enemy");
+            }
             _doorConfig.GetAnimator().SetBool("open", false);
         }
+
     }
 }

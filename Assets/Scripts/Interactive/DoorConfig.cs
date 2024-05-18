@@ -7,6 +7,7 @@ public class DoorConfig : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject _keyPrefab;
+    [SerializeField] private GameObject _doorbtnPrefab;
     private KeyConfig _keyConfig;
 
     Animator animator;

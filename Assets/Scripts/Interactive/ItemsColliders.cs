@@ -33,6 +33,7 @@ public class ItemsColliders : MonoBehaviour
 
             if (gameObject.name == "Key")
             {
+                print("key");
                 _gameManager.SetKeys();
                 gameObject.transform.parent = _playerBagPrefab.transform;
                 gameObject.SetActive(false);

@@ -57,6 +57,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyPrefab: {fileID: 0}
+  _doorbtnPrefab: {fileID: 0}
 --- !u!65 &5408105004894242051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyPrefab: {fileID: 0}
+  _doorbtnPrefab: {fileID: 0}
 --- !u!54 &3180671891838805804
 Rigidbody:
   m_ObjectHideFlags: 0
