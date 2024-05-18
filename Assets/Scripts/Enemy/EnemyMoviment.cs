@@ -7,7 +7,7 @@ public class EnemyMoviment : MonoBehaviour
 {
 
     [SerializeField] private bool _infiniteRotate = false;
-
+    [SerializeField] private bool disableMove = false;
 
     private float _ramdomTimeShot = 0;
 
@@ -19,35 +19,43 @@ public class EnemyMoviment : MonoBehaviour
     private float tempoDecorrido;
     private Vector3 direcaoAleatoria;
 
+    void Awake()
+    {
+        _ramdomTimeShot = Random.Range(1, 3);
+    }
+
     void Start()
     {
-
-        _ramdomTimeShot = Random.Range(1, 3);
         StartCoroutine(FireShot());
     }
 
 
     void Update()
     {
-        if (_infiniteRotate)
+        if (!disableMove)
         {
-            gameObject.transform.Rotate(0, 60f * Time.deltaTime, 0);
+
+            if (_infiniteRotate)
+            {
+                gameObject.transform.Rotate(0, 60f * Time.deltaTime, 0);
+            }
+            transform.Translate(direcaoAleatoria * velocidade * Time.deltaTime);
+
+
+
+            // Atualiza o tempo decorrido
+            tempoDecorrido += Time.deltaTime;
+
+            //transform.Translate(_speed * Time.deltaTime, 0, 0);
+
+            if (tempoDecorrido >= intervaloMudancaDirecao)
+            {
+                MudarDirecaoAleatoria();
+                tempoDecorrido = 0;
+            }
+
         }
-        transform.Translate(direcaoAleatoria * velocidade * Time.deltaTime);
-
-
-
-        // Atualiza o tempo decorrido
-        tempoDecorrido += Time.deltaTime;
         timeToShoot += Time.deltaTime;
-
-        //transform.Translate(_speed * Time.deltaTime, 0, 0);
-
-        if (tempoDecorrido >= intervaloMudancaDirecao)
-        {
-            MudarDirecaoAleatoria();
-            tempoDecorrido = 0;
-        }
     }
 
 

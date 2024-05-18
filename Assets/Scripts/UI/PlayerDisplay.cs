@@ -11,8 +11,11 @@ public class PlayerDisplay : MonoBehaviour
 
     GameObject _energies;
     Slider _slider;
-    void Start()
+
+
+    void Awake()
     {
+
         GameObject energies = GameObject.Find("Energies");
         GameObject player = GameObject.Find("Player");
         Camera mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
@@ -28,6 +31,9 @@ public class PlayerDisplay : MonoBehaviour
             rectPosition.anchoredPosition = new Vector3(positionPlayer.x, positionPlayer.y + 100f, positionPlayer.z);
         }
     }
+    void Start()
+    {
+    }
 
     void Update()
     {
@@ -39,6 +45,7 @@ public class PlayerDisplay : MonoBehaviour
 
     public void CreateBatteryGUI(int nErgies, GameObject _energyPrefab)
     {
+
         for (int i = 0; i < nErgies; i++)
         {
 
@@ -47,6 +54,10 @@ public class PlayerDisplay : MonoBehaviour
         }
     }
 
+    public void DestroyBatteryGUI(int nErgiesr)
+    {
+        Destroy(_energies.transform.GetChild(_energies.transform.childCount - 1).gameObject);
+    }
 
     public void SetDashBarGUI(float dashCooldown, float interval)
     {
