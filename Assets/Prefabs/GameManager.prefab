@@ -46,3 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _energy: 3
   _keys: 0
+  _vunerability: 1
+  immunityTimeMax: 3
+  _player: {fileID: 0}
