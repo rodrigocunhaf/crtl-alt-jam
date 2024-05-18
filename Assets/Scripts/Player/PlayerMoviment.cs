@@ -15,6 +15,14 @@ public class PlayerMoviment : MonoBehaviour
     private float _dashTimeCooldown = 0f;
 
     private float _dashSpeed = 1f;
+    Animator animator;
+    [SerializeField] GameObject body;
+
+
+    void Start()
+    {
+        animator = body.GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -26,22 +34,35 @@ public class PlayerMoviment : MonoBehaviour
     {
         if (moveDirection.x > 0 || moveDirection.x < 0 || moveDirection.y > 0 || moveDirection.y < 0)
         {
+
+            animator.SetBool("running", true);
+
             transform.Translate(moveDirection.y * _fowardSpeed * Time.deltaTime * _dashSpeed, 0, 0);
             if (moveDirection.y > 0 || moveDirection.y < 0)
             {
                 transform.Rotate(0, moveDirection.x * Time.deltaTime * _rotationSpeed, 0);
             }
+
             _lastDirection = moveDirection;
 
         }
+        else
+        {
+            animator.SetBool("running", false);
+
+        }
+
     }
 
-    void OnMove(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
+
         moveDirection = context.ReadValue<Vector2>();
+
+
     }
 
-    void OnDash(InputAction.CallbackContext context)
+    public void OnDash(InputAction.CallbackContext context)
     {
 
         if (context.started && !_dashCooldown)

@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -9,37 +15,24 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool _vunerability = true;
     [SerializeField] private float immunityTimeMax = 3f;
-    private float currentimmunityTime = 3;
 
     [SerializeField] GameObject _player;
+    [SerializeField] GameObject[] _doorsPrefabs;
+    [SerializeField] GameObject[] _keysDoorsPrefabs;
 
-    Material _transparenceMateiral;
-    Material _defaultMaterial;
-
-    private bool isTransparent;
-    MeshRenderer rend;
-
-    void Awake()
-    {
-        rend = _player.GetComponent<MeshRenderer>();
-        _defaultMaterial = rend.material;
-        _transparenceMateiral = Resources.Load<Material>("transparent");
-
-
-    }
-
-    void Start()
-    {
-        StartCoroutine(VulnerabilityCountdown());
-    }
+    private IEnumerator routineUI;
 
     void Update()
     {
-        if (!_vunerability)
+        if (Input.GetKey(KeyCode.R))
         {
-            currentimmunityTime -= Time.deltaTime;
+            SceneManager.LoadScene("Scenes/Tests/Enemy");
         }
 
+        if (_energy < 0)
+        {
+            Time.timeScale = 0;
+        }
     }
 
     public int GetEnergies()
@@ -53,21 +46,13 @@ public class GameManager : MonoBehaviour
 
     public void RemoveEnergy()
     {
-        if (_energy > 0)
+        if (_energy >= 0)
         {
             _energy -= 1;
         }
-        else
-        {
-            print("EndGame");
-        }
     }
 
-    public void SetVulnerability()
-    {
-        _vunerability = !_vunerability;
-        currentimmunityTime = 3f;
-    }
+
 
     public bool GetVulnerability()
     {
@@ -83,44 +68,18 @@ public class GameManager : MonoBehaviour
         _keys += 1;
     }
 
-    IEnumerator VulnerabilityCountdown()
+    IEnumerable OnEnergyFuel()
     {
-
-        for (; ; )
+        while (true)
         {
-            if (!_vunerability)
+            if (_energy <= 0)
             {
-                print("invulneravel");
-                for (int i = 0; i < 6; i++)
-                {
-                    if (i % 2 == 0)
-                    {
-                        rend.material = _transparenceMateiral;
-                        isTransparent = true;
-                        yield return new WaitForSeconds(1f);
-                    }
-                    else
-                    {
-                        rend.material = _defaultMaterial;
-                        isTransparent = false;
-                        yield return new WaitForSeconds(1f);
-
-                    }
-                    if (i == 6 - 1)
-                    {
-                        _vunerability = true;
-                    }
-
-                }
-
-
+                Time.timeScale = 0;
 
             }
-            yield return new WaitForSeconds(0.1f);
-
+            print("EndGame");
+            yield return new WaitForSeconds(1f);
         }
-
     }
-
 
 }
