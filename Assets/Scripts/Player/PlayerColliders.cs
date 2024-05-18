@@ -37,7 +37,7 @@ public class PlayerColliders : MonoBehaviour
         {
             if (_gameManager.GetEnergies() > 0)
             {
-                _gameManager.SetVulnerability();
+
                 shieldActive = true;
                 _energyShield.SetActive(true);
             }

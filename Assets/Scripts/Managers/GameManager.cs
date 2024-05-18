@@ -20,27 +20,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject[] _doorsPrefabs;
     [SerializeField] GameObject[] _keysDoorsPrefabs;
 
+    private IEnumerator routineUI;
 
-    void Start()
+    void Update()
     {
-
-        StartCoroutine(GameProgressRoutine());
-    }
-
-    IEnumerator GameProgressRoutine()
-    {
-        for (; ; )
+        if (Input.GetKey(KeyCode.R))
         {
-            if (_energy < 0)
-            {
-                Time.timeScale = 0;
-                yield return new WaitForSeconds(1f);
-            }
-            else
-            {
+            SceneManager.LoadScene("Scenes/Tests/Enemy");
+        }
 
-                yield return new WaitForSeconds(1f);
-            }
+        if (_energy < 0)
+        {
+            Time.timeScale = 0;
         }
     }
 
@@ -55,16 +46,13 @@ public class GameManager : MonoBehaviour
 
     public void RemoveEnergy()
     {
-        if (_energy > 0)
+        if (_energy >= 0)
         {
             _energy -= 1;
         }
     }
 
-    public void SetVulnerability()
-    {
 
-    }
 
     public bool GetVulnerability()
     {
@@ -78,6 +66,20 @@ public class GameManager : MonoBehaviour
     public void SetKeys()
     {
         _keys += 1;
+    }
+
+    IEnumerable OnEnergyFuel()
+    {
+        while (true)
+        {
+            if (_energy <= 0)
+            {
+                Time.timeScale = 0;
+
+            }
+            print("EndGame");
+            yield return new WaitForSeconds(1f);
+        }
     }
 
 }

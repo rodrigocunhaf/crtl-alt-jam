@@ -22,7 +22,6 @@ public class BeamColliders : MonoBehaviour
             if (_gameManager.GetEnergies() >= 0)
             {
                 _gameManager.RemoveEnergy();
-                _uiManager.RemoveUIEnergies();
             }
 
         }

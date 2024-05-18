@@ -19,6 +19,8 @@ public class EnemyMoviment : MonoBehaviour
     private float tempoDecorrido;
     private Vector3 direcaoAleatoria;
 
+    [SerializeField] private GameObject _bodyPrefab;
+
     void Awake()
     {
         _ramdomTimeShot = Random.Range(1, 3);
@@ -34,7 +36,6 @@ public class EnemyMoviment : MonoBehaviour
     {
         if (!disableMove)
         {
-
             if (_infiniteRotate)
             {
                 gameObject.transform.Rotate(0, 60f * Time.deltaTime, 0);
@@ -65,9 +66,11 @@ public class EnemyMoviment : MonoBehaviour
         {
             if (timeToShoot >= _ramdomTimeShot)
             {
-                for (int k = 0; k < gameObject.transform.childCount; k++)
+                //8 maos
+                for (int k = 0; k < _bodyPrefab.transform.childCount; k++)
                 {
-                    Transform hand = gameObject.transform.GetChild(k);
+                    //1
+                    GameObject hand = _bodyPrefab.transform.GetChild(k).gameObject;
                     for (int i = 0; i < hand.transform.childCount; i++)
                     {
 

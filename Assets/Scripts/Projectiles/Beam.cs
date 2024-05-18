@@ -25,10 +25,12 @@ public class Beam : MonoBehaviour
     void Awake()
     {
         _rend = GetComponent<Renderer>();
-        _projectContainer = GameObject.Find("Projectiles");
+
+
     }
     void Start()
     {
+        _projectContainer = GameObject.Find("Projectiles");
         if (_projectContainer != null)
         {
             transform.parent = _projectContainer.transform;
