@@ -880,6 +880,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7228568891884993331, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 6ac41cb89d315a14e855d434f8b6573c, type: 3}
+    - target: {fileID: 7228568891884993331, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
