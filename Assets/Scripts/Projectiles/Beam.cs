@@ -15,22 +15,23 @@ public class Beam : MonoBehaviour
     private bool bouncingTop = false;
     private float bouncingTime = 5f;
 
-    private bool changeDirection = false;
-    private float zigZagTime = 0f;
+    //private bool changeDirection = false;
+    //private float zigZagTime = 0f;
     //[SerializeField] float sin = 0;
     private Renderer _rend;
+    private GameObject _projectContainer;
 
 
     void Awake()
     {
         _rend = GetComponent<Renderer>();
+        _projectContainer = GameObject.Find("Projectiles");
     }
     void Start()
     {
-        GameObject projectilesContainer = GameObject.Find("Projectiles");
-        if (projectilesContainer != null)
+        if (_projectContainer != null)
         {
-            transform.parent = projectilesContainer.transform;
+            transform.parent = _projectContainer.transform;
         }
         else
         {
@@ -95,6 +96,8 @@ public class Beam : MonoBehaviour
         speed = gunConfig.GetProjectileVelocity(); ;
         _rend.material.color = gunConfig.GetProjectileColor();
         transform.name = beanName;
+        gameObject.layer = 6;//Player
+        gameObject.tag = "Projectile";
         transform.localScale = new Vector3(gunConfig.GetProjectileScale(), gunConfig.GetProjectileScale(), gunConfig.GetProjectileScale());
     }
 
