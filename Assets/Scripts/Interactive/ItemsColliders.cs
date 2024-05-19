@@ -29,6 +29,7 @@ public class ItemsColliders : MonoBehaviour
             {
                 _gameManager.AddEnergy();
                 _uiManager.SetUIEnergies();
+                Destroy(gameObject);
             }
 
             if (gameObject.name == "Key")

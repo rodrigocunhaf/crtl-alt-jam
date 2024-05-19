@@ -26,10 +26,13 @@ public class BeamColliders : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Shield"))
+        if (other.CompareTag("Shield") || other.CompareTag("Walls"))
         {
             Destroy(gameObject);
         }
+
+
     }
+
 
 }
