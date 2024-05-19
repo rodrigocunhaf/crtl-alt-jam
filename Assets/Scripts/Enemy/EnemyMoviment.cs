@@ -24,6 +24,9 @@ public class EnemyMoviment : MonoBehaviour
     private bool stunned = false;
     [SerializeField] private float stunnedTime = 3f;
     private float currentStunTime = 0;
+
+    private Animator animator;
+
     void Awake()
     {
         _ramdomTimeShot = Random.Range(1, 3);
@@ -32,6 +35,7 @@ public class EnemyMoviment : MonoBehaviour
     void Start()
     {
         StartCoroutine(FireShot());
+        animator = gameObject.transform.Find("Skin").GetComponent<Animator>();
     }
 
 
@@ -126,6 +130,15 @@ public class EnemyMoviment : MonoBehaviour
         currentStunTime = stunnedTime;
         stunned = !stunned;
         disableMove = !disableMove;
+        if (stunned)
+        {
+
+            animator.SetBool("disabled", true);
+        }
+        else
+        {
+            animator.SetBool("disabled", false);
+        }
     }
 
     public bool GetStunned()
