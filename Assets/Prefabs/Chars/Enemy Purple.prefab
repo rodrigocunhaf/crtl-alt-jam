@@ -204,6 +204,7 @@ GameObject:
   - component: {fileID: 7908029142415545162}
   - component: {fileID: 2326472408768517899}
   - component: {fileID: 8824029082218755189}
+  - component: {fileID: -7335896338162327892}
   m_Layer: 0
   m_Name: Enemy Purple
   m_TagString: Enemy
@@ -335,9 +336,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!33 &2326472408768517899
 MeshFilter:
@@ -368,6 +369,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 0.2853377, z: 0.99999976}
   m_Center: {x: 0, y: -0.52739054, z: 0}
+--- !u!114 &-7335896338162327892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4121582728443104773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93881d563029cbf439e25123caaa1bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4272645739604965634
 GameObject:
   m_ObjectHideFlags: 0

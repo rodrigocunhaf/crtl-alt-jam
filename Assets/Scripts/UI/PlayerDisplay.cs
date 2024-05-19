@@ -38,40 +38,16 @@ public class PlayerDisplay : MonoBehaviour
         rectPosition.anchoredPosition = new Vector3(positionPlayer.x, positionPlayer.y + 100f, positionPlayer.z);
     }
 
-    public void CreateBatteryGUI(int nErgies, GameObject _energyPrefab)
-    {
-        GameObject energies = GameObject.Find("Energies");
-        for (int i = 0; i < nErgies; i++)
-        {
-
-            GameObject newNergie = Instantiate(_energyPrefab, new Vector3(energies.transform.position.x + 34.2f * i, energies.transform.position.y, energies.transform.position.z), Quaternion.identity);
-            newNergie.transform.SetParent(energies.transform);
-        }
-    }
-
-    public void DestroyBatteryGUI(int nErgiesr)
-    {
-        GameObject energies = GameObject.Find("Energies");
-        if (nErgiesr > 0)
-        {
-            Destroy(energies.transform.GetChild(energies.transform.childCount - 1).gameObject);
-        }
-    }
-
     public void SetDashBarGUI(float dashCooldown, float interval)
     {
-
-
         if (dashCooldown > 0)
         {
-            _slider.value -= 0.33f;
+            _slider.value += (1 / interval) * Time.deltaTime;
         }
         else
         {
-            _slider.value = 1;
+            _slider.value = 0;
         }
-
-
 
     }
 }
