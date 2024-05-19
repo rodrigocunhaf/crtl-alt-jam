@@ -24,7 +24,11 @@ public class BtnDoor : MonoBehaviour
     void Start()
     {
         _doorConfig = _doorPrefab.GetComponent<DoorConfig>();
-        _txt = _timerFab.GetComponent<TextMeshProUGUI>();
+        if (_timerFab)
+        {
+
+            _txt = _timerFab.GetComponent<TextMeshProUGUI>();
+        }
     }
 
     void Update()
@@ -44,7 +48,11 @@ public class BtnDoor : MonoBehaviour
         }
         else
         {
-            _txt.text = $"";
+            if (_txt != null)
+            {
+
+                _txt.text = $"";
+            }
 
         }
 
