@@ -31,6 +31,17 @@ public class BeamColliders : MonoBehaviour
             Destroy(gameObject);
         }
 
+        if (other.CompareTag("Enemy") && gameObject.name == "PlayerBeam")
+        {
+            Destroy(gameObject);
+            EnemyMoviment enemyMov = other.gameObject.GetComponent<EnemyMoviment>();
+            if (!enemyMov.GetStunned())
+            {
+
+                enemyMov.SetStunned();
+            }
+
+        }
 
     }
 

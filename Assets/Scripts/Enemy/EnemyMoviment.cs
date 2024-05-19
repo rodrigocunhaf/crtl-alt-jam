@@ -21,6 +21,9 @@ public class EnemyMoviment : MonoBehaviour
 
     [SerializeField] private GameObject _bodyPrefab;
 
+    private bool stunned = false;
+    [SerializeField] private float stunnedTime = 3f;
+    private float currentStunTime = 0;
     void Awake()
     {
         _ramdomTimeShot = Random.Range(1, 3);
@@ -34,28 +37,46 @@ public class EnemyMoviment : MonoBehaviour
 
     void Update()
     {
-        if (!disableMove)
+        if (!stunned)
         {
-            if (_infiniteRotate)
+
+            if (!disableMove)
             {
-                gameObject.transform.Rotate(0, 60f * Time.deltaTime, 0);
-            }
-            transform.Translate(direcaoAleatoria * velocidade * Time.deltaTime);
+                if (_infiniteRotate)
+                {
+                    gameObject.transform.Rotate(0, 60f * Time.deltaTime, 0);
+                }
+                transform.Translate(direcaoAleatoria * velocidade * Time.deltaTime);
 
 
 
-            // Atualiza o tempo decorrido
-            tempoDecorrido += Time.deltaTime;
+                // Atualiza o tempo decorrido
+                tempoDecorrido += Time.deltaTime;
 
-            //transform.Translate(_speed * Time.deltaTime, 0, 0);
+                //transform.Translate(_speed * Time.deltaTime, 0, 0);
 
-            if (tempoDecorrido >= intervaloMudancaDirecao)
-            {
-                MudarDirecaoAleatoria();
-                tempoDecorrido = 0;
+                if (tempoDecorrido >= intervaloMudancaDirecao)
+                {
+                    MudarDirecaoAleatoria();
+                    tempoDecorrido = 0;
+                }
+
             }
 
         }
+        else
+        {
+            if (currentStunTime > 0)
+            {
+                currentStunTime -= Time.deltaTime;
+            }
+            else
+            {
+                SetStunned();
+
+            }
+        }
+
         timeToShoot += Time.deltaTime;
     }
 
@@ -64,52 +85,52 @@ public class EnemyMoviment : MonoBehaviour
     {
         while (true)
         {
-            if (timeToShoot >= _ramdomTimeShot)
+            if (!stunned)
             {
-                //8 maos
-                for (int k = 0; k < _bodyPrefab.transform.childCount; k++)
+                if (timeToShoot >= _ramdomTimeShot)
                 {
-                    //1
-                    GameObject hand = _bodyPrefab.transform.GetChild(k).gameObject;
-                    for (int i = 0; i < hand.transform.childCount; i++)
+                    //8 maos
+                    for (int k = 0; k < _bodyPrefab.transform.childCount; k++)
                     {
+                        //1
+                        GameObject hand = _bodyPrefab.transform.GetChild(k).gameObject;
+                        for (int i = 0; i < hand.transform.childCount; i++)
+                        {
 
-                        Transform gun = hand.transform.GetChild(i);
-                        GunConfig gunConfig = gun.GetComponent<GunConfig>();
-                        GameObject firedBeam = Instantiate(gunConfig.GetGunBeamPrefab(), gun.transform.position, Quaternion.identity);
-                        Beam beamConfig = firedBeam.GetComponent<Beam>();
-                        beamConfig.SetBeanConfig(gunConfig, "EnemyBeam");
-                        firedBeam.transform.rotation = gun.transform.rotation;
-                        firedBeam.transform.parent = gun.transform;
-                    };
+                            Transform gun = hand.transform.GetChild(i);
+                            GunConfig gunConfig = gun.GetComponent<GunConfig>();
+                            GameObject firedBeam = Instantiate(gunConfig.GetGunBeamPrefab(), gun.transform.position, Quaternion.identity);
+                            Beam beamConfig = firedBeam.GetComponent<Beam>();
+                            beamConfig.SetBeanConfig(gunConfig, "EnemyBeam");
+                            firedBeam.transform.rotation = gun.transform.rotation;
+                            firedBeam.transform.parent = gun.transform;
+                        };
+                    }
+
+                    _ramdomTimeShot = Random.Range(0, 3);
+                    timeToShoot = 0;
                 }
 
-                _ramdomTimeShot = Random.Range(0, 3);
-                timeToShoot = 0;
+                yield return new WaitForSeconds(_ramdomTimeShot);
             }
-            yield return new WaitForSeconds(_ramdomTimeShot);
+            else
+            {
+                yield return null;
+            }
         }
     }
 
-    //INIMIGO DO DNA
-    void SetAngleGun(GameObject gun)
+
+    public void SetStunned()
     {
-        if (angleTimer == 0f)
-        {
-            angleTimer += 1;
-        }
-        else if (angleTimer > 0 && angleTimer < 5)
-        {
-            gun.transform.Rotate(0, 10f, 0);
-            angleTimer += 1;
+        currentStunTime = stunnedTime;
+        stunned = !stunned;
+        disableMove = !disableMove;
+    }
 
-        }
-        else if (angleTimer >= 5)
-        {
-            gun.transform.Rotate(0, -10f, 0);
-            angleTimer -= 1;
-        }
-
+    public bool GetStunned()
+    {
+        return stunned;
     }
 
     void MudarDirecaoAleatoria()
