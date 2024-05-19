@@ -1031,6 +1031,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5833132840130779401, guid: d0df24b1501e215449b627b8eeca13ab,
         type: 3}
+      propertyPath: munitions
+      value: 21312321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833132840130779401, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
       propertyPath: reloadTime
       value: 2
       objectReference: {fileID: 0}
@@ -1378,6 +1383,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3397681278060730638, guid: 0754fc7e660eb2d41a63d15ac24445b1,
+        type: 3}
+      propertyPath: m_Name
+      value: Skin
+      objectReference: {fileID: 0}
     - target: {fileID: 3419111010817447958, guid: 0754fc7e660eb2d41a63d15ac24445b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1438,6 +1448,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8495032538164186588, guid: 0754fc7e660eb2d41a63d15ac24445b1,
+        type: 3}
+      propertyPath: disableMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8495032538164186588, guid: 0754fc7e660eb2d41a63d15ac24445b1,
+        type: 3}
+      propertyPath: stunnedTime
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1455,11 +1475,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 3382464783621735825, guid: d71ddf587916d3b418bfb36163b59930,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912109560257643135, guid: d71ddf587916d3b418bfb36163b59930,
         type: 3}
@@ -1511,6 +1526,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4198041137964922671, guid: d71ddf587916d3b418bfb36163b59930,
+        type: 3}
+      propertyPath: m_Name
+      value: Skin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1524,6 +1544,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 670211856125547317, guid: ed51a407a59bb364299ff56d7aa9ecc5,
+        type: 3}
+      propertyPath: m_Name
+      value: Skin
+      objectReference: {fileID: 0}
     - target: {fileID: 1475489646076974256, guid: ed51a407a59bb364299ff56d7aa9ecc5,
         type: 3}
       propertyPath: m_LocalPosition.x
