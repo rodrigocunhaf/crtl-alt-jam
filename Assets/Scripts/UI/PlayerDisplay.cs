@@ -8,20 +8,16 @@ public class PlayerDisplay : MonoBehaviour
     [SerializeField] GameObject _player;
 
     private Camera _mainCamera;
-
-    GameObject _energies;
     Slider _slider;
 
 
-    void Start()
+    void Awake()
     {
-        GameObject energies = GameObject.Find("Energies");
         GameObject player = GameObject.Find("Player");
         Camera mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         GameObject dashBar = GameObject.Find("DashBar");
-        if (energies != null && mainCamera != null && dashBar != null)
+        if (mainCamera != null && dashBar != null)
         {
-            _energies = energies;
             _mainCamera = mainCamera;
             _slider = dashBar.GetComponent<Slider>();
             _player = player;
@@ -29,6 +25,9 @@ public class PlayerDisplay : MonoBehaviour
             RectTransform rectPosition = GetComponent<RectTransform>();
             rectPosition.anchoredPosition = new Vector3(positionPlayer.x, positionPlayer.y + 100f, positionPlayer.z);
         }
+    }
+    void Start()
+    {
     }
 
     void Update()
@@ -41,24 +40,38 @@ public class PlayerDisplay : MonoBehaviour
 
     public void CreateBatteryGUI(int nErgies, GameObject _energyPrefab)
     {
+        GameObject energies = GameObject.Find("Energies");
         for (int i = 0; i < nErgies; i++)
         {
-            GameObject newNergie = Instantiate(_energyPrefab, new Vector3(_energies.transform.position.x + 34.2f * i, _energies.transform.position.y, _energies.transform.position.z), Quaternion.identity);
-            newNergie.transform.SetParent(_energies.transform);
+
+            GameObject newNergie = Instantiate(_energyPrefab, new Vector3(energies.transform.position.x + 34.2f * i, energies.transform.position.y, energies.transform.position.z), Quaternion.identity);
+            newNergie.transform.SetParent(energies.transform);
         }
     }
 
-
-    public void SetDashBarGUI(float dashCooldown)
+    public void DestroyBatteryGUI(int nErgiesr)
     {
-        if (dashCooldown < 0)
+        GameObject energies = GameObject.Find("Energies");
+        if (nErgiesr > 0)
         {
-            _slider.value = 1;
+            Destroy(energies.transform.GetChild(energies.transform.childCount - 1).gameObject);
+        }
+    }
+
+    public void SetDashBarGUI(float dashCooldown, float interval)
+    {
+
+
+        if (dashCooldown > 0)
+        {
+            _slider.value -= 0.33f;
         }
         else
         {
-
-            _slider.value = 1 - (1 / dashCooldown);
+            _slider.value = 1;
         }
+
+
+
     }
 }

@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb74962b9f0466469cec790233a4f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _batteryPrefab: {fileID: 8271433751892548080, guid: ff9383f75f9e5f1409523f589c4a4296,
+    type: 3}
