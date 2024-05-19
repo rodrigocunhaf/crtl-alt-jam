@@ -15,7 +15,7 @@ public class DoorConfig : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        if (_keyPrefab.GetComponent<KeyConfig>() != null)
+        if (_keyPrefab != null && _keyPrefab.GetComponent<KeyConfig>() != null)
         {
             _keyConfig = _keyPrefab.GetComponent<KeyConfig>();
         }

@@ -49,6 +49,9 @@ MonoBehaviour:
   projectileScale: 0.8
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &723530845591225999
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +101,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &3490542987375967295
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +153,9 @@ MonoBehaviour:
   projectileScale: 0.8
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4038066819125090028
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +269,7 @@ MonoBehaviour:
   velocidade: 3
   intervaloMudancaDirecao: 2
   _bodyPrefab: {fileID: 6189301529938532157}
+  stunnedTime: 3
 --- !u!65 &3721364318322027795
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -325,7 +335,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -608,6 +618,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6089404157091518908
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +825,9 @@ MonoBehaviour:
   projectileScale: 0.8
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &7644115713727540075
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +941,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &8500995154653420202
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +993,9 @@ MonoBehaviour:
   projectileScale: 0.8
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &8917228792917413226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1045,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1001 &399830738667794020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1099,12 +1124,16 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: abfc267a6cad54e44b8f38ddd38cb264,
         type: 3}
       propertyPath: m_Name
-      value: INIMIGO_ROXO
+      value: Skin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: abfc267a6cad54e44b8f38ddd38cb264,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1727596505060394716}
   m_SourcePrefab: {fileID: 100100000, guid: abfc267a6cad54e44b8f38ddd38cb264, type: 3}
 --- !u!4 &146017949892610447 stripped
 Transform:
@@ -1112,3 +1141,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 399830738667794020}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &670211856125547317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: abfc267a6cad54e44b8f38ddd38cb264,
+    type: 3}
+  m_PrefabInstance: {fileID: 399830738667794020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1727596505060394716
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670211856125547317}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47dcdbdada70ab042978f1711bccb030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

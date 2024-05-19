@@ -145,6 +145,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &867153458176798010
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +197,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &1140370319898575609
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +249,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &1445467522617114076
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +301,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &1519977280666876711
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +417,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &2189185294026453225
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,6 +469,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &2437538284993739166
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +613,7 @@ MonoBehaviour:
   velocidade: 3
   intervaloMudancaDirecao: 2
   _bodyPrefab: {fileID: 4391661667887644509}
+  stunnedTime: 3
 --- !u!54 &5500423268217960016
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -618,7 +637,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -735,6 +754,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4044417141908372464
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +806,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4217075737876698796
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +858,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4391661667887644509
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +1011,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4826508652038532255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,6 +1063,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4971074181151196172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,6 +1284,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &5954340193347797788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,6 +1336,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6074474259005779168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1412,6 +1452,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6504847797611260199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1632,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &7602728076192088000
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1684,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &7794023128873284473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,6 +1768,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &8324158358199557560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1820,9 @@ MonoBehaviour:
   projectileScale: 0.4
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1001 &3928011878054038142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1844,12 +1899,16 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8f1f662ced6b40f40b455a5add2222e1,
         type: 3}
       propertyPath: m_Name
-      value: INIMIGO_VERDE
+      value: Skin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f1f662ced6b40f40b455a5add2222e1,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9054509998923524166}
   m_SourcePrefab: {fileID: 100100000, guid: 8f1f662ced6b40f40b455a5add2222e1, type: 3}
 --- !u!4 &3533531857055411605 stripped
 Transform:
@@ -1857,3 +1916,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3928011878054038142}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4198041137964922671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8f1f662ced6b40f40b455a5add2222e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3928011878054038142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &9054509998923524166
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198041137964922671}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47dcdbdada70ab042978f1711bccb030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ public class BtnDoor : MonoBehaviour
     [SerializeField] GameObject _doorPrefab;
     private DoorConfig _doorConfig;
     [SerializeField] int countdown;
+    [SerializeField] GameObject _timerFab;
+
+    TextMeshProUGUI _txt;
 
     private bool onRadius = false;
 
@@ -20,6 +24,7 @@ public class BtnDoor : MonoBehaviour
     void Start()
     {
         _doorConfig = _doorPrefab.GetComponent<DoorConfig>();
+        _txt = _timerFab.GetComponent<TextMeshProUGUI>();
     }
 
     void Update()
@@ -32,6 +37,15 @@ public class BtnDoor : MonoBehaviour
         if (started)
         {
             timer += Time.deltaTime;
+            if (_txt)
+            {
+                _txt.text = $"{(int)Mathf.Abs(countdown - timer)}";
+            }
+        }
+        else
+        {
+            _txt.text = $"";
+
         }
 
         if (timer >= countdown)
@@ -39,6 +53,8 @@ public class BtnDoor : MonoBehaviour
             started = false;
             _doorConfig.GetAnimator().SetBool("open", true);
         }
+
+
 
     }
     void OnCollisionEnter(Collision collider)

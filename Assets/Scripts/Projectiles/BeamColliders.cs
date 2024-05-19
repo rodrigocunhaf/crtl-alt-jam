@@ -26,10 +26,24 @@ public class BeamColliders : MonoBehaviour
 
         }
 
-        if (other.CompareTag("Shield"))
+        if (other.CompareTag("Shield") || other.CompareTag("Walls"))
         {
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Enemy") && gameObject.name == "PlayerBeam")
+        {
+            Destroy(gameObject);
+            EnemyMoviment enemyMov = other.gameObject.GetComponent<EnemyMoviment>();
+            if (!enemyMov.GetStunned())
+            {
+
+                enemyMov.SetStunned();
+            }
+
+        }
+
     }
+
 
 }

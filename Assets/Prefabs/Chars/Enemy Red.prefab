@@ -170,6 +170,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &295630876675723776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,6 +1394,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!114 &5949163301040338944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,6 +1414,9 @@ MonoBehaviour:
   projectileScale: 0.4
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &2653366017383036256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,6 +1865,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &3397681278060730638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1865,8 +1877,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2624804402442945460}
+  - component: {fileID: 6664435935914401620}
   m_Layer: 0
-  m_Name: INIMIGO_VERMELHO
+  m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1905,6 +1918,27 @@ Transform:
   - {fileID: 420157057310526248}
   m_Father: {fileID: 3419111010817447958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6664435935914401620
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3397681278060730638}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47dcdbdada70ab042978f1711bccb030, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3597292034488088893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2226,6 +2260,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &3902516001795649341
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2312,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &4006288900341316622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,6 +2904,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &5200661378862536778
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,10 +3467,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _infiniteRotate: 0
-  disableMove: 0
+  disableMove: 1
   velocidade: 3
   intervaloMudancaDirecao: 2
   _bodyPrefab: {fileID: 55348274109855175}
+  stunnedTime: 6
 --- !u!65 &2718782639128026089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3516,7 +3560,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3633,6 +3677,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6207913877444772391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3824,6 +3871,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6529533419980962945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4078,6 +4128,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6581613934926895978
 GameObject:
   m_ObjectHideFlags: 0
@@ -4127,6 +4180,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &6582216849969824585
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,6 +5293,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &8368968848150501403
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,6 +5473,9 @@ MonoBehaviour:
   projectileScale: 1
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 0
+  munitions: 0
+  reloadTime: 0
 --- !u!1 &8538221998955183816
 GameObject:
   m_ObjectHideFlags: 0

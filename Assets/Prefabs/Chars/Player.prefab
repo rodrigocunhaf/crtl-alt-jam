@@ -4185,10 +4185,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.2
+  m_Radius: 1.04
   m_Height: 4.42
   m_Direction: 1
-  m_Center: {x: 0, y: 2.05, z: 0}
+  m_Center: {x: -0.25, y: 2.38, z: -0.01}
 --- !u!54 &876155714487139942
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4440,6 +4440,9 @@ MonoBehaviour:
   projectileScale: 0.3
   _beamPrefab: {fileID: 1936713454550782849, guid: b8d404f4bbd03834fbf0f8da4c6c9abf,
     type: 3}
+  _shoots: 4
+  munitions: 0
+  reloadTime: 2
 --- !u!1 &7017096474338089642
 GameObject:
   m_ObjectHideFlags: 0
