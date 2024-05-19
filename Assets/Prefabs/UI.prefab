@@ -269,6 +269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7636671381218200674}
+  - component: {fileID: 8214818530434661605}
   m_Layer: 5
   m_Name: Energies
   m_TagString: Untagged
@@ -295,6 +296,20 @@ RectTransform:
   m_AnchoredPosition: {x: -68.2, y: 133.47}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8214818530434661605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3276483488287723788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc138d6276ac1994487899171cf2b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _energyPrefab: {fileID: 8271433751892548080, guid: ff9383f75f9e5f1409523f589c4a4296,
+    type: 3}
 --- !u!1 &3921162729742614593
 GameObject:
   m_ObjectHideFlags: 0

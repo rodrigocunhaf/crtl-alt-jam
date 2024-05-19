@@ -8,6 +8,9 @@ public class DoorExitCollider : MonoBehaviour
 
     [SerializeField] DoorConfig _doorConfig;
 
+
+    [SerializeField] string nextSceneName;
+
     void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
@@ -21,7 +24,7 @@ public class DoorExitCollider : MonoBehaviour
             else
             {
 
-                SceneManager.LoadScene("Enemy");
+                SceneManager.LoadScene(nextSceneName);
             }
             _doorConfig.GetAnimator().SetBool("open", false);
         }

@@ -10,20 +10,22 @@ public class UIManager : MonoBehaviour
     GameManager _gameManager;
 
     PlayerMoviment _playerMoviment;
+    EnergyDisplay _energyDisplay;
 
     void Awake()
     {
 
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>(); ;
         _playerDisplay = GameObject.Find("PlayerDisplay").GetComponent<PlayerDisplay>();
-        _playerMoviment = GameObject.Find("Player").GetComponent<PlayerMoviment>(); ;
+        _playerMoviment = GameObject.Find("Player").GetComponent<PlayerMoviment>();
+        _energyDisplay = GameObject.Find("Energies").GetComponent<EnergyDisplay>(); ;
 
     }
 
     void Start()
     {
         StartCoroutine(Teste());
-        SetUIEnergies();
+
     }
 
     void Update()
@@ -43,12 +45,17 @@ public class UIManager : MonoBehaviour
 
     public void SetUIEnergies()
     {
-        _playerDisplay.CreateBatteryGUI(_gameManager.GetEnergies(), _batteryPrefab);
+        _energyDisplay.AddBatteryUI();
     }
 
     public void RemoveUIEnergies()
     {
-        _playerDisplay.DestroyBatteryGUI(_gameManager.GetEnergies());
+        if (_gameManager.GetEnergies() >= 0)
+        {
+            _energyDisplay.RemoveBatteryUI();
+
+        }
+
     }
 
 }

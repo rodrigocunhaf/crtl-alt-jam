@@ -115,7 +115,7 @@ public class EnemyMoviment : MonoBehaviour
                     timeToShoot = 0;
                 }
 
-                yield return new WaitForSeconds(_ramdomTimeShot);
+                yield return new WaitForSeconds(1f);
             }
             else
             {
@@ -146,7 +146,7 @@ public class EnemyMoviment : MonoBehaviour
         return stunned;
     }
 
-    void MudarDirecaoAleatoria()
+    public void MudarDirecaoAleatoria()
     {
         // Gera uma nova direção aleatória
         direcaoAleatoria = new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)).normalized;

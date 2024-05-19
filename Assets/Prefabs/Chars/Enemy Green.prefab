@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 6640011795646087124}
   - component: {fileID: 6709289256833211438}
   - component: {fileID: 5500423268217960016}
+  - component: {fileID: 8791255149642055539}
   m_Layer: 0
   m_Name: Enemy Green
   m_TagString: Enemy
@@ -637,10 +638,22 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &8791255149642055539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382464783621735825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93881d563029cbf439e25123caaa1bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3863154663923032769
 GameObject:
   m_ObjectHideFlags: 0

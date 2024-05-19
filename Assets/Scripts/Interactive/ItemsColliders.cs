@@ -17,6 +17,11 @@ public class ItemsColliders : MonoBehaviour
         _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
     }
 
+    void Start()
+    {
+
+    }
+
     void OnTriggerEnter(Collider collider)
     {
 
@@ -26,9 +31,13 @@ public class ItemsColliders : MonoBehaviour
 
             if (gameObject.name == "Battery")
             {
-                _gameManager.AddEnergy();
-                _uiManager.SetUIEnergies();
-                Destroy(gameObject);
+                if (_gameManager.GetEnergies() < 5)
+                {
+                    _gameManager.AddEnergy();
+                    _uiManager.SetUIEnergies();
+                    Destroy(gameObject);
+
+                }
             }
 
             if (gameObject.name == "Key")

@@ -2802,6 +2802,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5522155971441709310, guid: 4a463ed03c01fcb4cbcf6b1d9454122e,
         type: 3}
+      propertyPath: _timerFab
+      value: 
+      objectReference: {fileID: 925570801}
+    - target: {fileID: 5522155971441709310, guid: 4a463ed03c01fcb4cbcf6b1d9454122e,
+        type: 3}
       propertyPath: countdown
       value: 10
       objectReference: {fileID: 0}
@@ -5135,6 +5140,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4727959024376554718, guid: 8abfde23625905345b4da4d1c9a8b4d1,
+        type: 3}
+      propertyPath: nextSceneName
+      value: 02 Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122215242294277267, guid: 8abfde23625905345b4da4d1c9a8b4d1,
+        type: 3}
+      propertyPath: _doorbtnPrefab
+      value: 
+      objectReference: {fileID: 1945301941}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7517,6 +7532,12 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.10215561, y: 0.08872096, z: 0.003430004}
   m_Center: {x: 0.022669122, y: -0.007931944, z: 0.0010044144}
+--- !u!1 &925570801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3120316176311045319, guid: 5808084c9f800f34083eb82a6206a2fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 86651548}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &965486336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11752,6 +11773,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833132840130779401, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
+      propertyPath: munitions
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6358257401808002870, guid: d0df24b1501e215449b627b8eeca13ab,
         type: 3}

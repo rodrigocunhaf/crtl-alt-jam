@@ -24,10 +24,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadScene("Scenes/Tests/Enemy");
-        }
 
         if (_energy < 0)
         {
