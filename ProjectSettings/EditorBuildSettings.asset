@@ -15,9 +15,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 19cebb28eb6c111499cfa74a6e3c920a
   - enabled: 1
+    path: Assets/Scenes/Cutscene.unity
+    guid: 618ba723d68e742489a587bccafc2f80
+  - enabled: 1
+    path: Assets/Scenes/Levels/01 Level.unity
+    guid: b6af8070bb9a1c542b1be94e02375a76
+  - enabled: 1
+    path: Assets/Scenes/Levels/02 Level.unity
+    guid: 3327b708f238da246907d08158cb3d06
+  - enabled: 0
     path: Assets/Scenes/Tests/Player.unity
     guid: 130a708f7480e0f43a1427da0ebf77d5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tests/Enemy.unity
     guid: 1fa0523285c854d47b7ea5c5beed59af
   m_configObjects:

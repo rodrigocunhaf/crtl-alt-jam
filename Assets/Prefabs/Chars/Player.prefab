@@ -4148,7 +4148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2797e9e3ef496c0429a3f7b914bfe026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fowardSpeed: 8
+  _fowardSpeed: 12
   _rotationSpeed: 200
   _dashInterval: 3
   body: {fileID: 8202529789810331276}

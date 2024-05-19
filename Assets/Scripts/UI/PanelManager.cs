@@ -10,6 +10,8 @@ public class PanelManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject exitButton;
 
+    public string sceneToLoad = "Cutscene";
+
     private void Start()
     {
         // Desativa o painel no início da cena
@@ -43,7 +45,7 @@ public class PanelManager : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("ACena");
+        SceneManager.LoadScene(sceneToLoad);
     }
     public void QuitGame()
     {
