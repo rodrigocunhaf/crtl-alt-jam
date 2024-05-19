@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class UIManager : MonoBehaviour
     PlayerMoviment _playerMoviment;
     EnergyDisplay _energyDisplay;
 
+    Munitions _munitions;
+
+    Slider _shotBar;
+
     void Awake()
     {
 
@@ -19,7 +24,8 @@ public class UIManager : MonoBehaviour
         _playerDisplay = GameObject.Find("PlayerDisplay").GetComponent<PlayerDisplay>();
         _playerMoviment = GameObject.Find("Player").GetComponent<PlayerMoviment>();
         _energyDisplay = GameObject.Find("Energies").GetComponent<EnergyDisplay>(); ;
-
+        _munitions = GameObject.Find("Munitions").GetComponent<Munitions>();
+        _shotBar = GameObject.Find("ShotBar").GetComponent<Slider>();
     }
 
     void Start()
@@ -54,6 +60,26 @@ public class UIManager : MonoBehaviour
         {
             _energyDisplay.RemoveBatteryUI();
 
+        }
+
+    }
+
+    public void SetMunitionsUI(int munitions)
+    {
+        _munitions.SetUIMunitions(munitions);
+
+    }
+
+    public void SetShotBar(float timer)
+    {
+        if (timer == 0)
+        {
+            _shotBar.value = 0;
+        }
+        else
+        {
+
+            _shotBar.value += (_shotBar.value + timer) * Time.deltaTime;
         }
 
     }

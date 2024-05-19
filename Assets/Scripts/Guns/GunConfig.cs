@@ -16,11 +16,36 @@ public class GunConfig : MonoBehaviour
 
     [SerializeField] private float reloadTime;
 
+    private float currentReloadingTime = 0;
+    UIManager _uiManager;
+
 
     void Start()
     {
         StartCoroutine(ReloadingCoroutine());
+        GameObject uiManager = GameObject.Find("UIManager");
+        if (uiManager != null)
+        {
+            _uiManager = uiManager.GetComponent<UIManager>();
+            _uiManager.SetMunitionsUI(munitions);
+        }
     }
+
+    void Update()
+    {
+        if (_isReloading)
+        {
+            _uiManager.SetShotBar(1 / reloadTime);
+            currentReloadingTime += Time.deltaTime;
+        }
+        else
+        {
+            currentReloadingTime = reloadTime;
+            _uiManager.SetShotBar(0);
+        }
+
+    }
+
     public float GetProjectileVelocity()
     {
         return projectileVelocity;
@@ -43,6 +68,7 @@ public class GunConfig : MonoBehaviour
     public void SetMunitions(int munition)
     {
         munitions = munition;
+        _uiManager.SetMunitionsUI(munitions);
     }
 
     public int GetMunitions()
