@@ -1024,40 +1024,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5833132840130779401, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
+      propertyPath: _shoots
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5833132840130779401, guid: d0df24b1501e215449b627b8eeca13ab,
+        type: 3}
+      propertyPath: reloadTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6358257401808002870, guid: d0df24b1501e215449b627b8eeca13ab,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7708275997066805248, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7708275997066805248, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.21
-      objectReference: {fileID: 0}
-    - target: {fileID: 7708275997066805248, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791161320268633100, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: _fowardSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202529789810331276, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
-    - target: {fileID: 8700743533680515525, guid: d0df24b1501e215449b627b8eeca13ab,
-        type: 3}
-      propertyPath: m_Height
-      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 8700743533680515525, guid: d0df24b1501e215449b627b8eeca13ab,
         type: 3}
@@ -1453,6 +1433,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Red
       objectReference: {fileID: 0}
+    - target: {fileID: 5894548438771095627, guid: 0754fc7e660eb2d41a63d15ac24445b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1470,6 +1455,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 3382464783621735825, guid: d71ddf587916d3b418bfb36163b59930,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912109560257643135, guid: d71ddf587916d3b418bfb36163b59930,
         type: 3}
@@ -1588,6 +1578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy Purple
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121582728443104773, guid: ed51a407a59bb364299ff56d7aa9ecc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

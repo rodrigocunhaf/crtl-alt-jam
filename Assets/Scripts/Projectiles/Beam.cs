@@ -21,7 +21,6 @@ public class Beam : MonoBehaviour
     private Renderer _rend;
     private GameObject _projectContainer;
 
-
     void Awake()
     {
         _rend = GetComponent<Renderer>();
@@ -102,5 +101,6 @@ public class Beam : MonoBehaviour
         gameObject.tag = "Projectile";
         transform.localScale = new Vector3(gunConfig.GetProjectileScale(), gunConfig.GetProjectileScale(), gunConfig.GetProjectileScale());
     }
+
 
 }

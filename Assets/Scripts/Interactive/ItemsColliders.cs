@@ -8,8 +8,7 @@ public class ItemsColliders : MonoBehaviour
 {
     GameManager _gameManager;
     UIManager _uiManager;
-
-    [SerializeField] GameObject _playerBagPrefab;
+    [SerializeField] int _quanty;
 
 
     void Awake()
@@ -34,11 +33,18 @@ public class ItemsColliders : MonoBehaviour
 
             if (gameObject.name == "Key")
             {
-                print("key");
+                GameObject playerBagPrefab = collider.gameObject.transform.Find("PlayerBag").gameObject;
                 _gameManager.SetKeys();
-                gameObject.transform.parent = _playerBagPrefab.transform;
+                gameObject.transform.parent = playerBagPrefab.transform;
                 gameObject.SetActive(false);
 
+            }
+
+            if (gameObject.name == "Munition")
+            {
+                GunConfig playerGun = collider.transform.Find("PlayerGun").GetComponent<GunConfig>();
+                playerGun.SetMunitions(_quanty);
+                Destroy(gameObject);
             }
 
         }
