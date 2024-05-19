@@ -83,11 +83,17 @@ public class PlayerMoviment : MonoBehaviour
 
     void SetDashTimeCountdown()
     {
-        if (_dashTimeCooldown > 0)
+        if (_dashTimeCooldown < _dashInterval && _dashCooldown)
         {
-            _dashTimeCooldown -= Time.deltaTime;
-            _dashSpeed = 1f;
+            _dashTimeCooldown += Time.deltaTime;
+
         }
+        else
+        {
+            _dashSpeed = 1f;
+            _dashTimeCooldown = 0;
+        }
+
     }
 
     public float GetDashTimeCooldown()

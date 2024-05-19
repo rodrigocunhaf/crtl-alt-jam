@@ -40,15 +40,13 @@ public class PlayerDisplay : MonoBehaviour
 
     public void SetDashBarGUI(float dashCooldown, float interval)
     {
-
-
         if (dashCooldown > 0)
         {
-            _slider.value -= 0.33f;
+            _slider.value += (1 / interval) * Time.deltaTime;
         }
         else
         {
-            _slider.value = 1;
+            _slider.value = 0;
         }
 
     }
